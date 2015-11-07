@@ -1,12 +1,12 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
-(defconst *is-a-mac* (eq system-type 'darwin))
+;;(defconst *is-a-mac* (eq system-type 'darwin))
 
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
-;; (require 'init-compat)
+;;(require 'init-compat)
 (require 'init-utils)
 
 ;; Needed for Emacs version < 24. must come before elpa, as it may provide package.el
@@ -34,7 +34,7 @@
 ;; (require 'init-gui-frames)
 ;; (require 'init-proxies)
 (require 'init-dired)
-;; (require 'init-isearch)
+;;(require 'init-isearch)
 ;; (require 'init-uniquify)
 ;; (require 'init-ibuffer)
 ;; (require 'init-flycheck)
@@ -46,12 +46,12 @@
 (require 'init-auto-complete)
 ;; (require 'init-windows)
 ;; (require 'init-sessions)
-(require 'init-fonts)
+;;(require 'init-fonts)
 ;; (require 'init-mmm)
-(require 'init-tabbar)
-(require 'init-editing-utils)
-(require 'init-evil)
-(require 'init-matlab)
+;;(require 'init-tabbar)
+;;(require 'init-editing-utils)
+;;(require 'init-evil)
+;;(require 'init-matlab)
 
 ;; (require 'init-vc)
 ;; (require 'init-darcs)
@@ -59,7 +59,7 @@
 
 ;; (require 'init-crontab)
 ;; (require 'init-textile)
-(require 'init-markdown)
+;;(require 'init-markdown)
 (require 'init-auctex)
 ;; (require 'init-csv)
 ;; (require 'init-erlang)
@@ -71,7 +71,9 @@
 ;; (require 'init-css)
 ;; (require 'init-haml)
 ;; (require 'init-python-mode)
-(require 'init-haskell)
+;;(require 'init-haskell)
+
+
 ;; (require 'init-ruby-mode)
 ;; (require 'init-rails)
 ;; (require 'init-sql)
@@ -143,23 +145,34 @@
 
 ;;Here is some user defined configurations for Emacs
 
-(setenv "PATH" (concat (getenv "PATH") ":/usr/texbin"))
 
-(set-face-attribute 'default nil :height 130)
+; (setenv "PATH"
+;   (concat
+;    "/usr/texbin" ";"
+;    "/Library/TeX/texbin" ";"
+;    (getenv "PATH")
+;   )
+; )
 
-(add-hook 'org-mode-hook 'turn-on-org-cdlatex)
+; ;;(setenv "PATH" (concat (getenv "PATH") ":/usr/texbin"))
+; ;;(setenv "PATH" (concat (getenv "PATH") ":/Library/TeX/texbin"))
 
-(define-key global-map "\C-ca" 'org-agenda)
+; ;;set-face-attribute 'default nil :height 130)
 
-(define-key global-map "\C-cl" 'org-store-link)
+; (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 
-(setq org-default-notes-file (concat  "~/Documents/org/notes.org"))
-(define-key global-map "\C-cc" 'org-capture)
+; (define-key global-map "\C-ca" 'org-agenda)
 
-(setq org-todo-keywords
-  '((type "Work(w!)" "Learn(s!)" "Relax(l!)" "Family(f!)" "|")
-    (sequence "PENDING(p!)" "TODO(t!)"  "|" "DONE(d!)" "ABORT(a@/!)")
-))
+; (define-key global-map "\C-cl" 'org-store-link)
+
+
+; (setq org-default-notes-file (concat  "~/Documents/org/notes.org"))
+; (define-key global-map "\C-cc" 'org-capture)
+
+; (setq org-todo-keywords
+;   '((type "Work(w!)" "Learn(s!)" "Relax(l!)" "Family(f!)" "|")
+;     (sequence "PENDING(p!)" "TODO(t!)"  "|" "DONE(d!)" "ABORT(a@/!)")
+; ))
 
 ;(lambda () (setq truncate-lines nil)))
 
