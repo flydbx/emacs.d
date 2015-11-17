@@ -27,10 +27,11 @@
  tooltip-delay 1.5
  truncate-lines nil
  truncate-partial-width-windows nil
- visible-bell t)
-(set-scroll-bar-mode nil)
-(tool-bar-mode 0)
+ visible-bell nil)
 
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(setq scroll-bar-mode 0)
 
 ;; auto-revert
 (global-auto-revert-mode)
@@ -55,7 +56,7 @@
 (global-set-key (kbd "<S-return>") 'sanityinc/newline-at-end-of-line)
 
 ;; change yes-or-no to y-or-n
-;; (fset 'yes-or-no-p 'y-or-n-p)
+(fset 'yes-or-no-p 'y-or-n-p)
 
 ;; display time
 (display-time-mode t)
@@ -64,6 +65,7 @@
 ;; display line number
 ;; (require 'linum)
 (require-package 'hlinum)
+
 ;; (require 'hlinum)
 (hlinum-activate)
 (global-linum-mode t)

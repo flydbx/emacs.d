@@ -10,6 +10,20 @@
 (add-hook 'latex-mode-hook 'ac-latex-mode-setup)
 (add-hook 'LaTeX-mode-hook 'ac-latex-mode-setup)
 
+
+;; auto-complete setup, sequence is important
+
+; (add-hook 'LaTeX-mode-hook 'my-ac-latex-mode)
+; (setq ac-math-unicode-in-math-p t)
+; (ac-flyspell-workaround) ; fixes a known bug of delay due to flyspell (if it is there)
+; (add-to-list 'ac-modes 'org-mode) ; auto-complete for org-mode (optional)
+; (require 'auto-complete-config) ; should be after add-to-list 'ac-modes and hooks
+; (ac-config-default)
+; (setq ac-auto-start nil)            ; if t starts ac at startup automatically
+; (setq ac-auto-show-menu t)
+; (global-auto-complete-mode t) 
+; 
+
 ;; add ac-source for clang
 (require-package 'auto-complete-clang)
 (require 'auto-complete-clang)
